@@ -1,0 +1,41 @@
+# Core PyTorch and Deep Learning
+torch>=2.0.0
+torchvision>=0.15.0
+torchaudio>=2.0.0
+
+# Scientific Computing
+numpy>=1.21.0
+pandas>=1.3.0
+scipy>=1.7.0
+
+# Visualization
+matplotlib>=3.5.0
+seaborn>=0.11.0
+plotly>=5.0.0
+
+# Machine Learning Utilities
+scikit-learn>=1.0.0
+transformers>=4.20.0
+datasets>=2.0.0
+
+# Jupyter and Interactive Development
+jupyter>=1.0.0
+ipywidgets>=7.6.0
+notebook>=6.4.0
+
+# Image Processing
+Pillow>=8.3.0
+opencv-python>=4.5.0
+
+# Progress Bars and Utilities
+tqdm>=4.62.0
+wandb>=0.12.0  # For experiment tracking
+
+# Model Deployment
+flask>=2.0.0
+fastapi>=0.70.0
+uvicorn>=0.15.0
+
+# Development Tools
+black>=21.0.0
+pytest>=6.2.0
