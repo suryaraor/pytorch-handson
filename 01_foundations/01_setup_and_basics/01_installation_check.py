@@ -98,7 +98,7 @@ def basic_pytorch_test():
         print(f"Created tensor: {x}")
         print(f"Tensor shape: {x.shape}")
         print(f"Tensor dtype: {x.dtype}")
-        
+                
         # Basic operations
         y = x * 2
         print(f"Multiplication result: {y}")

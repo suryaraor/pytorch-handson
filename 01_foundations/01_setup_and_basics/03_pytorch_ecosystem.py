@@ -41,25 +41,36 @@ def check_ecosystem_libraries():
     available_libs = []
     missing_libs = []
     
+    import shutil
     for lib, description in ecosystem_libs.items():
-        try:
-            module = __import__(lib)
-            version = getattr(module, '__version__', 'Unknown')
-            print(f"✅ {lib} ({version})")
-            print(f"   {description}")
-            available_libs.append(lib)
-        except ImportError:
-            print(f"❌ {lib}")
-            print(f"   {description} (Not installed)")
-            missing_libs.append(lib)
+        if lib == 'torchserve':
+            if shutil.which('torchserve'):
+                print(f"✅ torchserve (CLI tool installed)")
+                print(f"   {description}")
+                available_libs.append(lib)
+            else:
+                print(f"❌ torchserve")
+                print(f"   {description} (Not installed)")
+                missing_libs.append(lib)
+        else:
+            try:
+                module = __import__(lib)
+                version = getattr(module, '__version__', 'Unknown')
+                print(f"✅ {lib} ({version})")
+                print(f"   {description}")
+                available_libs.append(lib)
+            except ImportError:
+                print(f"❌ {lib}")
+                print(f"   {description} (Not installed)")
+                missing_libs.append(lib)
         print()
-    
+
     print(f"📊 Summary: {len(available_libs)} available, {len(missing_libs)} missing")
-    
+
     if missing_libs:
         print("\n📦 To install missing libraries:")
-        print("pip install " + " ".join(missing_libs))
-    
+        print("pip install " + " ".join([lib for lib in missing_libs if lib != 'torchserve']))
+
     print("\n")
 
 def torchvision_demo():

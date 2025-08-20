@@ -167,7 +167,7 @@ def gpu_demonstration():
     print(f"Device name: {torch.cuda.get_device_name()}")
     
     # Performance comparison
-    size = 1000
+    size = 10000
     
     # CPU operations
     start_time = time.time()
